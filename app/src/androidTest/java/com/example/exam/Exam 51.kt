@@ -1,15 +1,14 @@
 fun main(){
-    retFunc()
+    retFunc1()
 }
-inline fun inlineLambda(a:Int,b:Int,out:(Int,Int)->Unit){
+fun inlineLambda1(a: Int,b: Int,out: (Int,Int) -> Unit){
     out(a,b)
 }
-fun retFunc(){
+fun retFunc1(){
     println("start of retFunc")
-    inlineLambda(5,3){
-        a,b->
+    inlineLambda1(13,3) lit@{ a,b ->
         val result = a+b
-        if(result>10) return
+        if(result>5) return@lit
         println("result: $result")
     }
     println("end of retFunc")

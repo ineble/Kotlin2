@@ -1,2 +1,0 @@
-class Exam 26 {
-}

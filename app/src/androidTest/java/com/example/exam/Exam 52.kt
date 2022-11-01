@@ -8,7 +8,7 @@ fun retFunc2(){
     println("start of retFunc")
     inlineLambda2(13,3) { a,b ->
         val result = a+b
-        if(result>10) return@inlineLambda2
+        if(result>5) return@inlineLambda2
         println("result: $result")
     }
     println("end of retFunc")
