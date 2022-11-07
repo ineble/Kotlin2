@@ -1,19 +1,20 @@
 package com.example.Relation
 
-//Assocoation -> 연관 관계 나도 상대가 다중 상대도 내가 다중
-class Patient(val name: String){
-    fun doctoList(d: Doctor){
+//DependencyTest -> 의존 관계 주체가 있고
+class Patient1(val name: String, var id: Int){
+    fun doctorList(d: Doctor){
         println("Patient : $name, Doctor: ${d.name}")
     }
 }
-class Doctor(val name: String){
-    fun patientList(p:Patient){
+class Doctor1(val name: String, val p : Patient1){
+    val customerId: Int = p.id
+    fun patientList(){
         println("Doctor: $name, Patient: ${p.name}")
+        println("Patient Id: $customerId")
     }
 }
 fun main(){
-    val doc1 = Doctor("KimSabu")
-    val patient1 = Patient("Kildong")
-    doc1.patientList(patient1)
-    patient1.doctoList(doc1)
+    val patient1 = Patient1("Kildong",1234)
+    val doc1 = Doctor1("KimSabu",patient1)
+    doc1.patientList()
 }

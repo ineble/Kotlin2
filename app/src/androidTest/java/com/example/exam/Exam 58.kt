@@ -1,3 +1,5 @@
+package com.example.exam
+
 class InvalidNameException(message: String) : Exception(message)
 fun main(){
     var name = "kildong123"

@@ -1,19 +1,16 @@
 package com.example.Object
 
-object OCunstomer{
-    var name = "kildong"
-    fun greeting() = println("Hello World!")
-    val HOBBY = Hobby("Basketball")
-    init{
-        println("Init!")
-    }
+open class Superman(){
+    fun work() = println("Taking photos")
+    fun talk() = println("Taking with people")
+    open fun fly() = println("Flying in the air")
 }
 
-class Hobby(val name:String)
-
 fun main(){
-    OCunstomer.greeting()
-    OCunstomer.name = "Dooly"
-    println("name = ${OCunstomer.name}")
-    println(OCunstomer.HOBBY.name)
+    val pretendedMan = object :Superman(){
+        override fun fly() = println("I'm not a real superman. I can't fly!")
+    }
+    pretendedMan.work()
+    pretendedMan.talk()
+    pretendedMan.fly()
 }

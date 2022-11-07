@@ -1,4 +1,4 @@
-fun main(){
+        fun main(){
     var test: Number = 12.2
     println("$test")
     test = 12

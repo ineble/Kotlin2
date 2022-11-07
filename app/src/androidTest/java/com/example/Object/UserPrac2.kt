@@ -1,18 +1,19 @@
 package com.example.Object
 
-class UserPrac1(_id: Int,_name:String,_age:Int) {
+class UserPrac2(_id: Int,_name:String,_age:Int) {
     val id: Int = _id
+    private var tempName: String? = null
     var name: String = _name
-        set(value) {
-            println("The name was changed")
-            field = value.toUpperCase()
+
+        get() {
+            if(tempName == null) {tempName = "NONAME"}
+            return tempName ?: throw  AssertionError("Asserted by others")
         }
     var age: Int = _age
 }
 
 fun main(){
-    val user1 = UserPrac1(1,"kildong",35)
-    println("user3.name = ${user1.name}")
-    user1.name = "cocobol"
+    val user1 = UserPrac2(1,"kildong",35)
+    user1.name = ""
     println("user3.name = ${user1.name}")
 }

@@ -1,15 +1,18 @@
 package com.example.Object
 
-import kotlin.properties.Delegates
-
-fun main(){
-    var max: Int by Delegates.vetoable(0){
-    prop,old,new ->
-    new > old
+class Person5{
+    var id: Int = 0
+    var name: String = "Youngdeok"
+    companion object{
+        var language: String = "Korean"
+        fun work(){
+            println("working...")
+        }
     }
-    println(max)
-    max = 10
-    println(max)
-    max = 5
-    println(max)
+}
+fun main(){
+    println(Person5.language)
+    Person5.language="English"
+    println(Person5.language)
+    Person5.work()
 }

@@ -1,20 +1,21 @@
 package com.example.classTest
+class Bird1 {
+    var name: String
+    var wing: Int
+    var beak: String
+    var color: String
 
-class Bird {
-    //프로퍼티
-    //메서드
-    var name = "myBird"
-    var wing = 2
-    var beak = "short"
-    var color = "blue"
-
-    fun fly() = println("fly wing: $wing")
-    fun sing(vol:Int) = println("Sing wing: $vol")
+    constructor(name:String,wing:Int,beak:String,color:String){
+        this.name = name
+        this.wing = wing
+        this.beak = beak
+        this.color = color
+    }
+    fun fly() = println("Fly wing: $wing")
+    fun sing(vol: Int) = println("Sing vol: $wing")
 }
 fun main(){
-    val coco = Bird()
-    coco.color = "red"
-
+    val coco = Bird1("myBird",2,"short","blue")
     println("coco.color: ${coco.color}")
     coco.fly()
     coco.sing(3)

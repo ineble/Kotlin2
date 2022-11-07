@@ -1,17 +1,13 @@
 package com.example.classTest
-class Bird4 constructor(_name:String,_wing:Int,_beak:String,_color:String) {
-    var name = _name
-    var wing = _wing
-    var beak = _beak
-    var color = _color
+class Bird5 constructor(var name:String,var wing:Int,var beak:String,var color:String) {
 
     fun fly() = println("Fly wing: $wing")
     fun sing(vol: Int) = println("Sing vol: $vol")
 }
 fun main(){
-    val coco2 = Bird4("Yorbird",2,"long","red")
-    println("coco2.name: ${coco2.name},coco2.wing: ${coco2.wing}")
-    println("coco2.name: ${coco2.color},coco2.wing: ${coco2.beak}")
-    coco2.fly()
-    coco2.sing(0)
+    val coco3 = Bird5("Yorbird",11,"long","orange")
+    println("coco3.name: ${coco3.name},coco2.wing: ${coco3.wing}")
+    println("coco3.name: ${coco3.color},coco2.wing: ${coco3.beak}")
+    coco3.fly()
+    coco3.sing(0)
 }

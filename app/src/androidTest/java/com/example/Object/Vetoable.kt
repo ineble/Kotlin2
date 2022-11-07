@@ -2,14 +2,14 @@ package com.example.Object
 
 import kotlin.properties.Delegates
 
-
-class UserP {
-    var name: String by Delegates.observable("NONAME"){
-    prop,old,new->println("$old -> $new")
-    }
-}
 fun main(){
-    val user = UserP()
-    user.name = "kildong"
-    user.name = "Dooly"
+    var max: Int by Delegates.vetoable(0){
+    prop,old,new ->
+    new > old
+    }
+    println(max)
+    max = 10
+    println(max)
+    max = 5
+    println(max)
 }

@@ -1,19 +1,22 @@
 package com.example.Object
 
-class UserPrac2(_id: Int,_name:String,_age:Int) {
-    val id: Int = _id
-    private var tempName: String? = null
-    var name: String = _name
-
-        get() {
-            if(tempName == null) {tempName = "NONAME"}
-            return tempName ?: throw  AssertionError("Asserted by others")
-        }
-    var age: Int = _age
+open class First{
+    open val x: Int = 0
+    get(){
+        println("First x")
+        return field
+    }
+    val y: Int = 0
 }
-
+class Second : First(){
+    override val x: Int = 0
+    get(){
+        println("Second x")
+        return field + 3
+    }
+}
 fun main(){
-    val user1 = UserPrac2(1,"kildong",35)
-    user1.name = ""
-    println("user3.name = ${user1.name}")
+    val second = Second()
+    println(second.x)
+    println(second.y)
 }

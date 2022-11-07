@@ -1,23 +1,20 @@
 package com.example.Relation
 
-//Aggregation ->
-//여러 마리의 오리를 위한 list 매개변수
-class Pond(_name: String,_members:MutableList<Duck>){
-    val name: String = _name
-    val members: MutableList<Duck> = _members
-    constructor(_name: String): this(_name,mutableListOf<Duck>())
+//Composition -> 구성 관계
+class Car(val name:String, val power: String){
+    private var engine = Engine(power)
+    fun startEngine() = engine.start()
+    fun stopEngine() = engine.stop()
 }
-class Duck(val name: String)
+class Engine(power: String){
+    fun start() = println("Engine has been started")
+    fun stop() = println("Engine has been stopped")
+}
+
+
 fun main(){
-    // 2 개체는 서로 생명주기에 영향을 주지 않는다.
-    val pond = Pond("myFavorite")
-    val duck1 = Duck("Duck1")
-    val duck2 = Duck("Duck2")
-    // 연못에 오리를 추가 - 연못에 오리가 집합한다
-    pond.members.add(duck1)
-    pond.members.add(duck2)
-    //연못에 있는 오리들
-    for(duck in pond.members){
-        println(duck.name)
-    }
+    val car = Car("tico","100hp")
+    car.startEngine()
+    car.stopEngine()
 }
+

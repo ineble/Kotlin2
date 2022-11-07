@@ -1,8 +1,8 @@
-package com.example
+package com.example.interface_
 
 interface Pet {
     var category: String
-    fun fedding()
+    fun feeding()
     fun patting(){
         println("Kepp patting!")
     }
@@ -14,4 +14,7 @@ class Cat(override var category: String) : Pet{
 }
 fun main(){
     val obj = Cat("small")
+    println("Pet Category: ${obj.category}")
+    obj.feeding()
+    obj.patting()
 }

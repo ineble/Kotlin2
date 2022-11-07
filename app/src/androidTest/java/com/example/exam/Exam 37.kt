@@ -1,3 +1,5 @@
+package com.example.exam
+
 class MyClass
 fun main(){
     cases("Hello") //String

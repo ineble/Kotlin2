@@ -1,4 +1,8 @@
-package com.example.Object
+package com.example.Object;
 
-class PackageLevelFunction {
+fun packageLevelFunc() {
+    println("Package-Level Function")
+}
+fun main(){
+    packageLevelFunc()
 }

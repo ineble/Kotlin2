@@ -1,19 +1,23 @@
 package com.example.Relation
 
-//Assocoation -> 연관 관계 나도 상대가 다중 상대도 내가 다중
-class Patient(val name: String){
-    fun doctorList(d: Doctor){
-        println("Patient : $name, Doctor: ${d.name}")
-    }
+//Aggregation ->
+//여러 마리의 오리를 위한 list 매개변수
+class Pond(_name: String,_members:MutableList<Duck>){
+    val name: String = _name
+    val members: MutableList<Duck> = _members
+    constructor(_name: String): this(_name,mutableListOf<Duck>())
 }
-class Doctor(val name: String){
-    fun patientList(p:Patient){
-        println("Doctor: $name, Patient: ${p.name}")
-    }
-}
+class Duck(val name: String)
 fun main(){
-    val doc1 = Doctor("KimSabu")
-    val patient1 = Patient("Kildong")
-    doc1.patientList(patient1)
-    patient1.doctorList(doc1)
+    // 2 개체는 서로 생명주기에 영향을 주지 않는다.
+    val pond = Pond("myFavorite")
+    val duck1 = Duck("Duck1")
+    val duck2 = Duck("Duck2")
+    // 연못에 오리를 추가 - 연못에 오리가 집합한다
+    pond.members.add(duck1)
+    pond.members.add(duck2)
+    //연못에 있는 오리들
+    for(duck in pond.members){
+        println(duck.name)
+    }
 }

@@ -1,21 +1,21 @@
 package com.example.classTest
-class Bird1 {
+class Bird2 {
     var name: String
     var wing: Int
     var beak: String
     var color: String
 
-    constructor(name:String,wing:Int,beak:String,color:String){
-        this.name = name
-        this.wing = wing
-        this.beak = beak
-        this.color = color
+    constructor(_name:String,_wing:Int,_beak:String,_color:String){
+        name = _name
+        wing = _wing
+        beak = _beak
+        color = _color
     }
     fun fly() = println("Fly wing: $wing")
-    fun sing(vol: Int) = println("Sing vol: $wing")
+    fun sing(vol: Int) = println("Sing vol: $vol")
 }
 fun main(){
-    val coco = Bird1("myBird",2,"short","blue")
+    val coco = Bird2("myBird",2,"short","blue")
     println("coco.color: ${coco.color}")
     coco.fly()
     coco.sing(3)

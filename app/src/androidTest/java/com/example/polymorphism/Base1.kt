@@ -3,7 +3,9 @@ package com.example.polymorphism
     open class Base1() {
         protected var i = 1
         protected fun protectedFunc(){
+            println("i : $i")
             i += 1
+            println("i : $i")
         }
         fun access(){
             protectedFunc()
@@ -18,7 +20,7 @@ package com.example.polymorphism
     }
     fun main(){
         val base = Base1()
-        /* base.i*/
-        base.protectedFunc()
+        /*base.i
+        base.protectedFunc()*/
         base.access()
     }
